@@ -1,0 +1,31 @@
+.header {
+    padding: 20px;
+    text-align: start;
+    background: white;
+    color: black;
+    font-size: 30px;
+    justify-self:baseline;
+    
+    
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  .header h1{
+ 
+ 
+font-size: 50px;  
+}
+
+  .button{
+    position:absolute;
+    top: 20px;
+    right:20px;
+    background-color: white;
+    border: none;
+    font-size: medium;
+  }
+  .hiouline{
+    position: relative;
+    top: 4.45px;
+    right: 6px;
+  }
+ 

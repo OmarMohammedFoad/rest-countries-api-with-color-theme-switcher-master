@@ -1,0 +1,123 @@
+.imgdetails{
+    
+    border: outset;
+    border-radius: 10px;
+    width: 450px;
+    height: 100%;
+
+     
+}
+.back{
+  position: relative;
+  bottom: 45px;
+  right:  250px;
+  background-color: #FFFFFF;
+  border: 0;
+  border-radius: .5rem;
+  box-sizing: border-box;
+  color: #111827;
+  font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: .875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  padding: .75rem 1rem;
+  text-align: center;
+  text-decoration: none #D1D5DB solid;
+  text-decoration-thickness: auto;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+.back:hover {
+  background-color: rgb(30, 30, 30);
+  color: #D1D5DB;
+}
+.about-text{
+    margin-top: 50px;
+}
+.second-div{
+    position: relative;
+    left:300px;
+    bottom: 80px;
+}
+.about-text1{
+    position: relative;
+    top:150px;
+}
+
+.about-text1 h3
+{
+    
+    position: relative;
+    bottom: 20px;
+
+}
+.about-text1 span
+{
+    
+    font-weight: bold;
+}
+
+
+.buttondive{
+    position: relative;
+    display: flex;
+    
+    margin-left: 20px;
+}
+.nothing{
+    display: flex;
+    float: left;
+    
+}
+
+.flex-container {
+    display: flex;
+    
+    
+    
+    float:  left ;
+  }
+  .flex-container > button {
+    background-color: #f1f1f1;
+    margin: 10px;
+    
+    font-size: 15px;
+  }
+
+.buttonborder {
+    background-color: #FFFFFF;
+    border: 0;
+    border-radius: .5rem;
+    box-sizing: border-box;
+    color: #111827;
+    font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: .875rem;
+    font-weight: 600;
+    line-height: 1.25rem;
+    padding: .75rem 1rem;
+    text-align: center;
+    text-decoration: none #D1D5DB solid;
+    text-decoration-thickness: auto;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.buttonborder:hover {
+  background-color: rgb(30, 30, 30);
+  color: #D1D5DB;
+}
+
+.buttonborder:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.buttonborder:focus-visible {
+  box-shadow: none;
+}

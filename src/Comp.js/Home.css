@@ -1,0 +1,35 @@
+.card {
+    
+    width: 250px;
+    text-decoration: none;
+    font-weight:bold ;
+    /* color: black; */
+    color: inherit;
+  
+}
+
+.card-text{
+    font-family: sans-serif;
+    font-weight: bold;
+    
+}
+
+.nothing{
+    font-weight: bold;
+}
+
+.card-img-top{
+    max-width: 100%;
+    max-width: 300px; 
+}
+.Container
+{
+    padding-top:100px ;
+    padding-bottom: 100px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+.card, .card:hover, .card:focus, .card:active {
+    text-decoration: none;
+    color: inherit;
+}

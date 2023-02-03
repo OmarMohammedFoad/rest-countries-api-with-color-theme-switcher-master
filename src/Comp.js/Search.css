@@ -1,0 +1,29 @@
+.field-container
+{
+    padding-top:50px ;
+    padding-left: 100px;
+    padding-right: 100px;
+    
+}
+.field
+{
+    width: 25rem;
+    height: 45px;
+    border: medium ;
+    box-shadow: rgba(137, 132, 132, 0.24) 0px 3px 8px;
+   
+ 
+    padding-left:30px;
+    
+    
+    
+
+}
+
+.icon-search i{
+    
+    right: -10px;
+    top: 29px;
+    color:grey;
+}
+
