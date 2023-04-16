@@ -1,4 +1,4 @@
-    import "./Select.css"
+
 export default function Select(props)
 {
     function filterRegionSeleceted(event)

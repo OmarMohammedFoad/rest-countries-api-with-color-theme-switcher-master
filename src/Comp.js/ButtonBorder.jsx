@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import country from '../data.json';
-import "./CountryDetails.css"
 
 export default function ButtonBorder(props)
 {

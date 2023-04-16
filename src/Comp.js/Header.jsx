@@ -1,7 +1,6 @@
-import "./Header.css"
+// import "./Header.css"
 import { HiOutlineMoon } from "react-icons/hi";
 import {Link} from "react-router-dom"
-
 
  function Header(props)
 {

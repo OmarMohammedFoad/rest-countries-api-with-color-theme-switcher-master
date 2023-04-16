@@ -1,5 +1,4 @@
-import OneCountry from "./OneCountry";
-import "./CountryDetails.css"
+
 import people from "../data.json"
 import { useParams ,Link} from "react-router-dom";
 

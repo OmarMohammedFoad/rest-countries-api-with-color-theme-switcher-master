@@ -4,8 +4,11 @@ import Header from './Comp.js/Header';
 import { useState,useEffect } from 'react';
 import {Routes,Route, BrowserRouter} from "react-router-dom"
 import CountryDetails from './Comp.js/CountryDetails';
+import styled from 'styled-components';
 
-// import "./darkmood.css"
+const Apps = styled.div`
+
+`
 
 
 function App() {
@@ -29,8 +32,8 @@ function App() {
     }
   }  
   return (
-    <>
-      <div className={`app ${theme}`}>
+    <Apps>
+      
     
       <BrowserRouter>
       <Header Toggle={toggle}/> 
@@ -42,8 +45,8 @@ function App() {
     </Routes>
     </BrowserRouter>
    
-    </div>
-    </>
+ 
+    </Apps>
     
   );
 }

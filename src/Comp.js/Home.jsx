@@ -2,9 +2,20 @@ import people from  "../data.json"
 import OneCountry from "./OneCountry"
 import Search from "./Search"
 import Select from "./Select"
-
-
+import styled from "styled-components"
 import { useState } from "react"
+
+
+
+const Container = styled.div`
+  display:flex;
+  flex-flow:column;
+`
+const MiniContainer = styled.div`
+    display: grid;
+    grid-template-columns: repeat(4, 5fr);
+
+`
 
 export default function Flag()
 
@@ -24,24 +35,22 @@ return setSearch(  people.filter(people=>people.name.toLowerCase().includes(quer
 
     return ( 
       <>
-      <br/>
       
-      <Select   onSelectFilter={filterfromrealData} />
-      
-      <Search onChange={(e)=>searchfun(e.target.value.toLowerCase())}/>
+       <Select   onSelectFilter={filterfromrealData} ></Select>
+      {/* <Search onChange={(e)=>searchfun(e.target.value.toLowerCase())}/>  */}
       
 
-    <div className="Container">  
-      <div className="row">
+    <Container >  
+      <MiniContainer>
       {
           search.map(data=>
-          <div className="col">
+          
              <OneCountry  content={data}/>
-          </div> )
+         )
       }
    
-  </div>
-</div>
+  </MiniContainer>
+</Container>
 </>
     )
 }
