@@ -1,94 +1,150 @@
 
 import people from "../data.json"
 import { useParams ,Link} from "react-router-dom";
-
 import ButtonBorder from "./ButtonBorder";
+import styled  from "styled-components";
 
 
+const BigDiv = styled.div`
+align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 5rem;
+    @media (max-width: 812px) {
+    display:flex;
+    flex-direction:column;
+    /* height: auto;
+    align-items:center;
+    justify-content:center; */
+    gap:70px;
+    width:100%;
+    height:100%;
+    padding-bottom:20px;
+    padding-left:26px;
+    
+    /* grid-template-columns:repeat(1,1fr); */
+  }
+  
+`
+const SecondDiv = styled.div`
+
+    align-items: flex-start;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:start;
+    @media (max-width: 812px)
+    {
+      display: flex;
+    flex-direction: column;
+    
+    }
+
+`
+const ThirddDiv = styled.div`
+      display: flex;
+    font-weight: 600;
+    margin-top: 4rem;
+    margin-left: -4rem;
+    width: 100%;
+
+    ul{
+          list-style-type: none;
+
+    }
+    span{
+      padding: 2px;
+      font-weight:normal;
+    }
+    h2{
+      position:relative;
+      bottom:40px;
+      left:110px; 
+    }
+`
+const Border = styled.div`
+       display: grid;
+    grid-template-columns: repeat(4, 5rem);
+    margin-left:54px;
+    gap: 5px;
+`
+
+const Image = styled.img`
+    height: auto;
+    width: 555px;
+    box-shadow: 0 0 15px rgba(0,0,0,.15);
+ 
+`
+const Button ={
+  "border":"none",
+  "height":"100%",
+  "width":"60px",
+  "text-align":"center" ,
+  "box-shadow": "0 0 15px rgba(0,0,0,.15)",
+  "border-radius":"5px",
+  "font-weight":200,
+  "textDecoration": "none",
+  color: 'black'
+
+  
+}
 
 export default function CountryDetails()
 {
    
 const param =useParams()
 
-    return <>
-    {
-      people.filter(people=>people.name.includes(param.flagname)).map(data=>
+    return(
     
-    <section key={data.id} className="section about-section gray-bg" id="about">
-        <div className="container">
-            
-    <div className="row align-items-center justify-content-around flex-row-reverse">
-        <div className="col-lg-6">
-            <div className="about-text1">
-            <h3 className="dark-color">{data.name}</h3>
-            <p className="theme-color"><span className="nothing">Nativename</span> : {data.nativeName}</p>
-            <p><span className="nothing">Population</span> : {data.population}</p>
-            <p><span className="nothing">Region</span> : {data.region}</p>
-            <p><span className="nothing">Sub region</span> : {data.subregion}</p>
-            <p><span className="nothing">Capital</span> : {data.capital}</p>
-            <div className="btn-bar"> 
-           
-             </div>
-             </div>
-             <div className="second-div">
-            <div className="about-text">
-            <h3 className="dark-color"></h3>
-            <p className="theme-color"> <span className="nothing">Top level domain</span> : {data.topLevelDomain}</p>
-            <p> <span className="nothing">Currencies</span> : {data.currencies[0].name}</p>
-            <span className="nothing"> Languages</span> :
-            
-            {data.languages.map(lan=>
-                  <div>
-                   { 
-                   <p>
-                        {lan.nativeName}
-                    </p>}
-                  </div>
-                  )}
-                  
+      people.filter(people=>people.name.includes(param.flagname)).map(data=>
+  
+        <BigDiv key={data.id} >
+      <Link style={Button} to={"/"} >back</Link>
+                <Image src={data.flag} alt={data.name} /> 
+        <SecondDiv>
+          <ThirddDiv>
+          <h2 >{data.name}</h2>
+            <ul>
+              <li>   Nativename :<span> {data.nativeName}</span></li>
 
-                 
-                  <span className="nothing">Border : </span>
-                {data.borders=== undefined ?
-                
-                  <h1>
-                    
-                  </h1>
+              <li>Population :<span > {data.population}</span></li>
 
-                  :
-                    
-                  
-                  data.borders.map(border=>
-                    
-                    <div className="flex-container">
-                        
-                        
-                        
-                        <ButtonBorder  className="bordercountry"  border={border}/>
-                    </div>
-                    )}
-                   
- 
-           
-            <div className="btn-bar"> 
-           
-             </div>
-             </div>
-             </div>
-            </div>
+              <li> Subregion : <span>{data.subregion}</span></li>
+              <li>  Region :<span> {data.region}</span></li>
+          <li>Capital :<span> {data.capital}</span></li>
+
+            </ul>
+         
+         <ul>
+         
+          <li>Top level domain :<span> {data.topLevelDomain} </span></li>
+          <li>Currencies : <span>{data.currencies[0].name}</span></li>
+          <li>  Languages :{data.languages.map(lan=><span>{lan.nativeName}</span>)}</li>
+         </ul>
+         </ThirddDiv>
             
-            <div className="col-lg-5 text-center">
-            <Link  to={"/"} className="back">back</Link>
-                <div className="about-img"> 
-                <img src={data.flag} alt={data.name} className="imgdetails" />
-                </div>
-                </div>
-                </div>
-                </div> 
-                </section>
-      )} 
-    </>
+            <Border>
+                  {data.borders?<span >Border : </span>:<></>}
+                {data.borders=== undefined ?<h1></h1>:data.borders.map(border=>
+                <ButtonBorder border={border}/>)}
+             </Border>
+             </SecondDiv>
+
+           
+           
+             
+            
+            
+                    
+                </BigDiv>
+      )
+    )
 }
 
 

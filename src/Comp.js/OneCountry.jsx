@@ -5,47 +5,57 @@ import styled from "styled-components";
 const Container = styled.div`
   display:flex;
   flex-flow:column;
-  margin:20px;
-  border:5px  ;
-  box-shadow: 2px ;
-
-    
-`
-
-
-const Img = styled.img`
-      width: 245px;
-    height: 161px;
-`
-const Details = styled.div`
-  display:flex;
-  flex-direction: column;
-  color:black;
-  background-color: hsl(0, 0%, 100%);
-  width: 245px;
-    height: 161px;
-`
-
-const Des = styled.div`
-  display:flex;
-  flex-direction:row;
-  /* grid-template-columns:repeat(1,1fr); */
-  
-  /* padding-left:1px; */
-  font-size:15px; 
-  margin-bottom:60px;
+  padding:20px;
 
   
-  h5{
-    font-size:20px;
-    font-weight: bold;
-  }
+   
+
 `
+const MiniContainer = styled.div`
+  background-color:hsl(0, 0%, 100%);
+  box-sizing: border-box;
+  height: 370px;
+  width: 280px;
+  box-shadow: 0 0 15px rgba(0,0,0,.15);
+  border-radius:10px 10px;
+  transition: .3s;
+  :hover {
+    transform: scale(1.1);
+}
+`
+const Image  = styled.img`
+   height: 160px;
+  width:100%;
+  object-fit:cover;
+  
+  border-radius: 10px 10px 0   0  ;
+`
+
 const linkStyle = {
- 
   textDecoration: "none",
   color: 'black'
 };
+
+
+const Details = styled.div`
+      padding: 0 24px;
+  
+  h3{
+    
+    font-weight: 700;
+    font-size: 1.25rem;
+    
+  }
+  span{
+    
+    font-weight:600;
+  }
+  p{
+    
+    font-weight:100;
+  }
+`
+
 
 
 export default function OneCountry(props)
@@ -54,19 +64,18 @@ export default function OneCountry(props)
     const {content} = props
     return <Container>
    
-      {/* <div className=""> */}
-    <Img src={content.flags.svg}  alt={content.name}/>
-     <Details>
-      <Link  style={linkStyle} to={`details/${content.name}`}  >
-        <Des>
-    <h5>{content.name}</h5>
-    <p>    <span>population</span> :            {content.population}</p>
-    <p>    <span>region</span> :          {content.region}</p>
-    <p>    <span>capital</span> :          {content.capital}</p>
-    </Des>
+        <Link  style={linkStyle} to={`details/${content.name}`}  >
+        <MiniContainer>
+          <Image src={content.flags.svg}  alt={content.name}/> 
+          <Details>
+         <h3>{content.name}</h3>
+         
+         <p>    <span>population</span> :            {content.population}</p>
+         <p>    <span>region</span> :          {content.region}</p>
+         <p>    <span>capital</span> :          {content.capital}</p>
+         </Details>
+       </MiniContainer>
   </Link>
-  </Details>
-  {/* </div> */}
   
   </Container>
 }

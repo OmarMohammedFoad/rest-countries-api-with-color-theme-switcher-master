@@ -1,25 +1,25 @@
-
-
+import styled from "styled-components"
+const Fieldset = styled.fieldset`
+  border:none;
+  input{
+    box-shadow: 0 0 15px rgba(0,0,0,.15);
+    padding:10px;
+    margin-left:10px;
+    border-radius:5px;
+    border:none;
+    width:300px;
+    height:50px;
+  }
+`
 export default function Search({onChange})
 
 {
-    return <>
+    return( 
     
-<fieldset className="field-container">
-  
-<link href='https://css.gg/search.css' rel='stylesheet'/>
-            
-  
-  <div className="icons-container">
-    <div className="icon-search">
-    <span> <i className="gg-search"></i></span><input type="text" placeholder="Search..." onChange={onChange}className="field" />
+<Fieldset> 
+     <input type="text" placeholder="Search for the countery ..." onChange={onChange}className="field" />
 
-    </div>
-    <div className="icon-close">
-      <div className="x-up"></div>
-      <div className="x-down"></div>
-    </div>
-  </div>
-</fieldset>
-    </>
+
+</Fieldset>
+    )
 }
