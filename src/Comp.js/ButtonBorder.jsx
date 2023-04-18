@@ -15,7 +15,7 @@ const Button ={
 
     
 }
-export default function ButtonBorder(props)
+export default function     ButtonBorder(props)
 {
      
     return <>

@@ -7,7 +7,7 @@ const Head = styled.div`
   width:auto;
   display:flex;
   flex-direction:row;
-  padding:25px 0  25px 25px;
+  padding: 25px 9px 53px 25px;
   height:10px;
   box-shadow: 0 0 15px rgba(0,0,0,.15);
   background-color:hsl(0, 0%, 100%);
